@@ -1,0 +1,2 @@
+// Open the file you want to test to the side and watch here
+// Output mirrored at file:///var/folders/7_/6p6y3gn11wx0939j26kng5rh0000gn/T/vcode-tm-log-119aebe5-31c0-4658-b0e8-e9fce2c38ad2.txt
