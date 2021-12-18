@@ -1,73 +1,23 @@
-import React, { Component } from "react";
-import VerifySignature from "../redux/actions/VerifySignature";
-import { connect } from "react-redux";
+const ethers = require('ethers');
 
+async function main() {
 
-//mport { Button } from 'react-bootstrap';
+  let privatekey = 'CE75F1A875F2DB7FB064F5DBD302B0C77FFEAA18CC4C314167A5111A04F79AFA';
+  let wallet = new ethers.Wallet(privatekey);
 
-class Login extends Component {
+  console.log('Using wallet address ' + wallet.address);
 
-    initLogin() {
-        let TS = new Date();
-        let TSs =
-            TS.getFullYear() +
-            "-" +
-            TS.getMonth() +
-            "-" +
-            TS.getDate() +
-            " at " +
-            TS.getHours() +
-            ":00 o 'clock";
-        //get metamask's open account address
-        let signingAcct = window.web3.eth.coinbase;
-        //prompt the client to sign the string
-        window.web3.personal.sign(
-            window.web3.fromUtf8(TSs), //strin converted to proper format
-            signingAcct,
-            (e, signature) => {
-                //this.props.setAddressFromSignature(TSs, signature);
-                this.props.addSignature(TSs, signature);
-                this.props.calcAddress(TSs, signature);
+  let transaction = {
+    to: '0xa238b6008Bc2FBd9E386A5d4784511980cE504Cd',
+    value: ethers.utils.parseEther('1'),
+    gasLimit: '21000',
+    maxPriorityFeePerGas: ethers.utils.parseUnits('5', 'gwei'),
+    maxFeePerGas: ethers.utils.parseUnits('20', 'gwei'),
+    nonce: 1,
+    type: 2,
+    chainId: 3
+  };
 
-            }
-        );
-    }
-
-    render() {
-        return (
-            <div>
-                Logged in with <strong>{this.props.address}</strong> on{" "}
-                <strong>{this.props.messageToSign}</strong>
-                &nbsp;&nbsp;
-            <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={this.initLogin.bind(this)}
-                //onClick =//{this.props.///////////////////////////////////////////////////}
-                >
-                    Login
-        </button>
-            </div>
-        );
-    }
 }
 
-function mapStateToProps(state) {
-    return {
-        address: state.VerifySignature.verifiedAddress,
-        messageToSign: state.VerifySignature.msg
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        calcAddress: (msg, msgSig) => {
-            dispatch(VerifySignature.calcAddress(dispatch, msg, msgSig))
-        },
-        addSignature: (msg, msgSig) => {
-            dispatch(VerifySignature.addSignature(dispatch, msg, msgSig))
-
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+main();
