@@ -1,3 +1,4 @@
+const ethers = require('ethers');
 
 async function main() {
 
@@ -11,4 +12,4 @@ async function main() {
 }
 
 main();import {} from 'web3';
-import {} from 'web3';
+
