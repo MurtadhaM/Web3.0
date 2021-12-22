@@ -1,6 +1,12 @@
 # Web3.0 Decentralized Application Prototypes
 
-![Alt text](https://c.gitcoin.co/web3-01.svg)
+
+![Alt text](https://etherscan.io/token/images/fox_32.png)
+
+##### It is intended to be used by coders, developers technically-skilled traders, data-scientists and financial analysts for building trading algorithms 
+
+![Alt text](https://etherscan.io/token/images/umavotingtokenv1_32.png) 
+
 ## Table of Contents
 
 - [Background](#background)
