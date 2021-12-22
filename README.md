@@ -1,1 +1,1 @@
-# Web3.0
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/extensionid.svg?style=flat-square)
