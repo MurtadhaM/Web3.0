@@ -1,5 +1,6 @@
 # Web3.0 Decentralized Application Prototypes
 
+![Alt text](https://c.gitcoin.co/web3-01.svg)
 ## Table of Contents
 
 - [Background](#background)
@@ -70,7 +71,9 @@ var web3 = new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546')
 The  [MIT License](https://choosealicense.com/licenses/mit/) governs the use of this software.
 ## Team
 [Murtadhha Marzouq](https://github.com/MurtadhaM)
+
 [Miguel Morel](https://github.com/mmorel1)
+
 [Basher Mansor](https://github.com/wounded990)
 
 
